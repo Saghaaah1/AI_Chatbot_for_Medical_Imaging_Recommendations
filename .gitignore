@@ -1,19 +1,9 @@
-# Python caches
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-
-# Virtual environments
-.uv/
+.venv/
+.env/
 uv.lock
-
-# IDEs / editors
-.vscode/
-.idea/
-*.swp
-
-# OS files
+vectorstore/
+chroma/
+.ipynb_checkpoints/
 .DS_Store
-Thumbs.db
-

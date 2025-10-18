@@ -1,13 +1,31 @@
 [project]
 name = "ai-chatbot-for-medical-imaging-recommendations"
 version = "0.1.0"
-description = "Add your description here"
+description = "Chatbot RAG pour recommander des examens d'imagerie médicale basés sur les directives ADERIM."
 readme = "README.md"
 requires-python = ">=3.12"
+
 dependencies = [
+    # API/Web Deployment (FLASK)
     "flask>=3.1.2",
+    "uvicorn", # Serveur ASGI pour Flask/FastAPI
+
+    # Core LLM/Hugging Face
+    "transformers>=4.57.1",
+    "accelerate",
+    "bitsandbytes", # CLÉ pour GPU T4 Colab
+
+    # RAG Framework
+    "langchain",
+    "langchain-community", 
+
+    # Data Ingestion & Vectorization
+    "pypdf",
+    "sentence-transformers",
+    "chromadb",
+
+    # Data Science Tools (Pour le traitement des entrées/sorties)
     "numpy>=2.3.4",
     "pandas>=2.3.3",
     "scikit-learn>=1.7.2",
-    "transformers>=4.57.1",
 ]
