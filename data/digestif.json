@@ -1,0 +1,548 @@
+[
+    {
+      "id": "abdomen_ASP_v1",
+      "motif": "douleur abdominale",
+      "mots_cles": [
+        "ASP",
+        "radiographie abdominale",
+        "abdomen sans préparation",
+        "mal au ventre",
+        "occlusion",
+        "appendicite",
+        "hémorragie digestive"
+      ],
+      "population": "adulte",
+      "condition": "douleur abdominale ou syndrome abdominal aigu",
+      "modalite": "ASP (abdomen sans préparation)",
+      "urgence": "aucune",
+      "justification": "L’ASP n’a plus d’indication dans les douleurs abdominales, suspicions d’occlusion, appendicite, ou autres syndromes abdominaux aigus. Il n’est indiqué que pour la recherche de fécalome, ingestion de corps étranger ou suivi de colique néphrétique.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "L’ASP n’a plus d’indication dans les douleurs abdominales, les hémorragies digestives ou les suspicions d’appendicite. Il ne doit être utilisé que dans la recherche de fécalome, d’ingestion de corps étranger dangereux ou pour le suivi de colique néphrétique. (ADERIM 2025, Système Digestif – Généralités).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Généralités (ASP)" }
+    },
+    {
+      "id": "abdomen_scanner_urgence_v1",
+      "motif": "douleur abdominale",
+      "mots_cles": [
+        "scanner abdominal",
+        "scanner abdominopelvien",
+        "CT",
+        "TDM",
+        "urgence abdominale",
+        "mal au ventre"
+      ],
+      "population": "adulte",
+      "condition": "urgence abdominale",
+      "modalite": "scanner abdominopelvien avec injection",
+      "urgence": "immédiate",
+      "justification": "Le scanner est l’examen clé des urgences abdominales chez l’adulte. Il permet une exploration rapide et complète des organes intra-abdominaux.",
+      "contre_indications": ["allergie au produit de contraste iodé", "insuffisance rénale sévère"],
+      "niveau_preuve": "fort",
+      "summary_text": "En cas d’urgence abdominale, le scanner abdominopelvien avec injection est l’examen clé chez l’adulte, permettant une évaluation rapide et complète. (ADERIM 2025, Système Digestif – Généralités).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Généralités (Scanner)" }
+    },
+    {
+      "id": "abdomen_appendicite_enfant_v1",
+      "motif": "douleur abdominale",
+      "mots_cles": [
+        "mal au ventre",
+        "douleur FID",
+        "appendicite",
+        "douleur abdominale",
+        "enfant"
+      ],
+      "population": "enfant",
+      "condition": "douleur FID évoquant une appendicite chez l'enfant",
+      "modalite": "échographie abdominale",
+      "urgence": "rapide (<6h)",
+      "justification": "Examen de première intention. L'IRM peut être envisagée si l'échographie est non concluante. Le scanner n'est réservé qu'aux cas complexes.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez un enfant présentant un mal au ventre localisé à la fosse iliaque droite, l'échographie abdominale est l'examen de première intention pour rechercher une appendicite. En cas de doute diagnostique, l'IRM est préférée au scanner. (ADERIM 2025).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Appendicite (enfant)" }
+    },
+    {
+      "id": "abdomen_appendicite_adulte_v1",
+      "motif": "douleur abdominale",
+      "mots_cles": [
+        "douleur abdominale",
+        "mal au ventre",
+        "ventre douloureux",
+        "crampe abdominale",
+        "douleur FID",
+        "appendicite",
+        "abdomen"
+      ],
+      "population": "adulte",
+      "condition": "douleur de la fosse iliaque droite évoquant une appendicite chez l'adulte",
+      "modalite": "échographie-Doppler abdominopelvienne",
+      "urgence": "rapide (<6h)",
+      "justification": "Examen de première intention chez un sujet jeune et mince. Si non contributive ou chez le patient âgé, un scanner abdominopelvien avec injection est indiqué.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez un adulte présentant un mal de ventre localisé à la fosse iliaque droite évoquant une appendicite, l'échographie-Doppler abdominopelvienne est recommandée en première intention. Si l'examen est non concluant ou chez un patient âgé, un scanner abdominopelvien avec injection est indiqué. (ADERIM 2025, Système Digestif – Appendicite).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Appendicite (adulte)" }
+    },
+    {
+      "id": "abdomen_appendicite_grossesse_v1",
+      "motif": "douleur abdominale",
+      "mots_cles": [
+        "douleur abdominale",
+        "mal au ventre",
+        "appendicite",
+        "femme enceinte",
+        "grossesse"
+      ],
+      "population": "femme enceinte",
+      "condition": "douleur FID chez une femme enceinte évoquant une appendicite",
+      "modalite": "IRM abdominopelvienne",
+      "urgence": "rapide (<6h)",
+      "justification": "L'IRM est l'examen de référence pendant la grossesse. L'échographie peut être réalisée en première intention, mais le scanner est contre-indiqué.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez une femme enceinte présentant une douleur abdominale droite évoquant une appendicite, l'IRM abdominopelvienne est recommandée. L'échographie peut être utilisée en première intention, mais le scanner est à éviter. (ADERIM 2025).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Appendicite (grossesse)" }
+    },
+    {
+      "id": "abdomen_cancer_colon_v1",
+      "motif": "douleur abdominale",
+      "mots_cles": [
+        "cancer colique",
+        "cancer du côlon",
+        "cancer colorectal",
+        "bilan d’extension",
+        "coloscanner",
+        "scanner thoracoabdominopelvien"
+      ],
+      "population": "adulte",
+      "condition": "suspicion ou bilan de cancer colique",
+      "modalite": "scanner thoracoabdominopelvien avec injection",
+      "urgence": "programmée",
+      "justification": "Examen de référence pour le bilan d’extension du cancer du côlon. Permet de visualiser la tumeur, l’extension locale et la recherche de métastases.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Pour un patient atteint d’un cancer colique, le scanner thoracoabdominopelvien avec injection est l’examen de référence pour le bilan d’extension locale et à distance. Il recherche notamment les métastases hépatiques et pulmonaires. (ADERIM 2025, Système Digestif – Cancers digestifs).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Cancer du côlon" }
+    },
+    {
+      "id": "abdomen_cancer_rectal_v1",
+      "motif": "bilan cancer rectal",
+      "mots_cles": [
+        "cancer rectal",
+        "IRM rectum",
+        "bilan d’extension rectal",
+        "rectum",
+        "rectoscopie"
+      ],
+      "population": "adulte",
+      "condition": "cancer du rectum diagnostiqué, bilan préthérapeutique",
+      "modalite": "IRM pelvienne",
+      "urgence": "programmée",
+      "justification": "L’IRM du rectum est l’examen de référence pour évaluer l’extension tumorale, les adénopathies locorégionales et la distance par rapport aux sphincters.",
+      "contre_indications": ["claustrophobie sévère", "dispositif métallique non compatible"],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez un patient présentant un cancer rectal, l’IRM pelvienne est l’examen de référence pour le bilan d’extension et la planification thérapeutique. Elle permet de préciser le stade T et l’envahissement des sphincters. (ADERIM 2025, Système Digestif – Cancers digestifs).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Cancer rectal" }
+    },
+    {
+      "id": "abdomen_cancer_pancreas_v1",
+      "motif": "douleur abdominale ou suspicion de cancer du pancréas",
+      "mots_cles": [
+        "cancer du pancréas",
+        "tumeur pancréatique",
+        "bilan d’extension",
+        "scanner pancréas",
+        "IRM pancréas",
+        "pancréatite chronique"
+      ],
+      "population": "adulte",
+      "condition": "suspicion ou bilan de cancer du pancréas",
+      "modalite": "scanner thoracoabdominopelvien avec injection",
+      "urgence": "programmée (priorité 2 à 3)",
+      "justification": "Le scanner thoracoabdominopelvien est indiqué pour rechercher un cancer du pancréas (priorité 2) et en faire le bilan pré-thérapeutique (métastases, envahissement vasculaire et ganglionnaire). L'imagerie doit être interprétée en concertation avec les gastroentérologues dans le cadre de RCP.",
+      "contre_indications": ["allergie au produit de contraste iodé", "insuffisance rénale sévère"],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez un patient présentant une suspicion de cancer du pancréas, le scanner thoracoabdominopelvien avec injection est l’examen de première intention pour la détection et le bilan préthérapeutique (métastases, extension vasculaire et ganglionnaire). L’imagerie doit être discutée en RCP avec les gastroentérologues. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Cancer du pancréas" }
+    },
+    {
+      "id": "abdomen_IRM_pancreas_v1",
+      "motif": "cancer du pancréas",
+      "mots_cles": [
+        "IRM pancréas",
+        "IRM hépatique",
+        "IRM métastases",
+        "bilan hépatique",
+        "analyse canalaire"
+      ],
+      "population": "adulte",
+      "condition": "bilan complémentaire du cancer du pancréas après scanner",
+      "modalite": "IRM abdominale",
+      "urgence": "programmée",
+      "justification": "L’IRM est indiquée en seconde intention pour l’analyse canalaire et la recherche de métastases hépatiques. Elle n’est pas indiquée s’il existe des métastases hépatiques d’emblée ou une tumeur massivement envahissante sur le scanner initial.",
+      "contre_indications": ["claustrophobie sévère", "dispositif métallique non compatible"],
+      "niveau_preuve": "modéré",
+      "summary_text": "En seconde intention après un scanner, l’IRM abdominale est utilisée pour analyser les canaux pancréatiques et rechercher des métastases hépatiques, sauf si des métastases évidentes ou une tumeur très avancée sont déjà visibles au scanner initial. (ADERIM 2025, Système Digestif – Cancer du pancréas).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Cancer du pancréas (IRM)" }
+    },
+    {
+      "id": "abdomen_cirrhose_v1",
+      "motif": "douleur abdominale ou suspicion de maladie du foie",
+      "mots_cles": [
+        "cirrhose",
+        "maladie du foie",
+        "hépatopathie chronique",
+        "échographie hépatique",
+        "élastographie",
+        "suivi cirrhose",
+        "carcinome hépatocellulaire"
+      ],
+      "population": "adulte",
+      "condition": "suspicion clinique ou biologique de cirrhose, ou suivi de cirrhose connue",
+      "modalite": "échographie-Doppler abdominale avec ou sans élastographie",
+      "urgence": "programmée (suivi semestriel)",
+      "justification": "L’échographie-Doppler abdominale est indiquée pour le diagnostic initial de cirrhose et pour le suivi semestriel, notamment pour surveiller l’hypertension portale et dépister un carcinome hépatocellulaire. L’élastographie aide au diagnostic. L’injection de produit de contraste peut être utile pour caractériser un nodule.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez un patient présentant une suspicion clinique ou biologique de cirrhose, l’échographie-Doppler abdominale est recommandée pour le diagnostic et le suivi semestriel. Elle permet d’évaluer l’hypertension portale et de dépister un carcinome hépatocellulaire. L’élastographie est conseillée pour confirmer le diagnostic. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Cirrhose" }
+    },
+    {
+      "id": "abdomen_IRM_cirrhose_v1",
+      "motif": "suivi de cirrhose",
+      "mots_cles": [
+        "IRM hépatique",
+        "IRM foie",
+        "nodule hépatique",
+        "cirrhose",
+        "bilan hépatique",
+        "fer hépatique"
+      ],
+      "population": "adulte",
+      "condition": "suivi de cirrhose avec anomalies échographiques ou nouveau nodule",
+      "modalite": "IRM hépatique",
+      "urgence": "programmée",
+      "justification": "Lors du suivi d’une cirrhose, une IRM hépatique est indiquée en cas de visibilité insuffisante en échographie, d’apparition d’un nouveau nodule, ou de modification d’un nodule connu. Elle permet également de quantifier la charge en fer ou en graisse.",
+      "contre_indications": ["claustrophobie sévère", "dispositif métallique non compatible"],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez un patient cirrhotique, l’IRM hépatique est indiquée en cas de visibilité insuffisante en échographie, d’apparition d’un nodule ou de modification d’un nodule existant. Elle permet également de mesurer la charge en fer ou en graisse hépatique. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Cirrhose (IRM)" }
+    },
+    {
+      "id": "abdomen_diverticulite_v1",
+      "motif": "douleur abdominale",
+      "mots_cles": [
+        "diverticulite",
+        "douleur abdominale",
+        "mal au ventre",
+        "sigmoïdite",
+        "scanner abdominal"
+      ],
+      "population": "adulte",
+      "condition": "suspicion de diverticulite",
+      "modalite": "scanner abdominopelvien avec injection",
+      "urgence": "rapide (48–72h)",
+      "justification": "Le scanner abdominopelvien est indiqué pour confirmer une poussée de diverticulite et en évaluer les complications éventuelles. Il doit être réalisé rapidement (48–72h) mais il ne s’agit pas d’une urgence vitale.",
+      "contre_indications": ["allergie au produit de contraste iodé"],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez un patient présentant une douleur abdominale compatible avec une diverticulite, le scanner abdominopelvien avec injection est recommandé pour confirmer la poussée et rechercher des complications. Il doit être réalisé dans les 48 à 72 heures. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Diverticulite" }
+    },
+    {
+      "id": "abdomen_diverticulose_v1",
+      "motif": "douleur abdominale ou suivi digestif",
+      "mots_cles": ["diverticulose", "asymptomatique", "colique", "sigmoïde"],
+      "population": "adulte",
+      "condition": "diverticulose colique sans symptôme",
+      "modalite": "aucun examen d’imagerie indiqué",
+      "urgence": "aucune",
+      "justification": "Aucune imagerie n’est indiquée pour la recherche d’une diverticulose asymptomatique, qui correspond à une anomalie anatomique sans symptôme.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Aucun examen d’imagerie n’est indiqué pour la recherche d’une diverticulose asymptomatique, car il s’agit d’une anomalie anatomique sans traduction clinique. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Diverticulose" }
+    },
+    {
+      "id": "abdomen_fecalome_v1",
+      "motif": "constipation ou suspicion de fécalome",
+      "mots_cles": [
+        "fécalome",
+        "constipation sévère",
+        "occlusion",
+        "ASP",
+        "radiographie abdominale",
+        "abdomen sans préparation"
+      ],
+      "population": "adulte âgé",
+      "condition": "constipation chez le sujet âgé suspect de fécalome",
+      "modalite": "radiographie d’abdomen sans préparation (ASP)",
+      "urgence": "programmée",
+      "justification": "L’une des rares indications persistantes de l’ASP est la constipation du sujet âgé pour la recherche d’un fécalome.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Chez le sujet âgé présentant une constipation importante, la radiographie d’abdomen sans préparation (ASP) est indiquée pour rechercher un fécalome. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Fécalome" }
+    },
+    {
+        "id": "abdomen_hepatite_aigue_v1",
+        "motif": "hépatite aiguë",
+        "mots_cles": [
+          "hépatite aiguë",
+          "foie",
+          "inflammation hépatique",
+          "transaminases élevées",
+          "ictère",
+          "douleur abdominale"
+        ],
+        "population": "adulte",
+        "condition": "hépatite aiguë",
+        "modalite": "aucune imagerie en première intention",
+        "urgence": "aucune",
+        "justification": "En cas d’hépatite aiguë, il n’y a pas d’imagerie de première intention. L’étiologie de l’hépatite peut amener à d’autres examens d’imagerie selon le contexte.",
+        "contre_indications": [],
+        "niveau_preuve": "fort",
+        "summary_text": "En cas d’hépatite aiguë, aucune imagerie n’est indiquée en première intention. L’origine de l’hépatite guide la réalisation éventuelle d’autres examens d’imagerie. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Hépatite aiguë" }
+    },
+    {
+        "id": "abdomen_hepatite_chronique_v1",
+        "motif": "hépatite chronique",
+        "mots_cles": [
+          "hépatite chronique",
+          "foie",
+          "échographie hépatique",
+          "hépatopathie chronique",
+          "suivi hépatique"
+        ],
+        "population": "adulte",
+        "condition": "hépatite chronique",
+        "modalite": "échographie-Doppler abdominale",
+        "urgence": "programmée",
+        "justification": "L’échographie-Doppler abdominale ne permet pas le diagnostic d’hépatite chronique mais recherche des signes d’hépatopathie chronique.",
+        "contre_indications": [],
+        "niveau_preuve": "modéré",
+        "summary_text": "Chez un patient présentant une hépatite chronique, l’échographie-Doppler abdominale est indiquée pour rechercher des signes d’hépatopathie chronique. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Hépatite chronique" }
+    },
+    {
+        "id": "abdomen_hernie_hiatale_v1",
+        "motif": "hernie hiatale",
+        "mots_cles": [
+          "hernie hiatale",
+          "reflux gastro-œsophagien",
+          "endoscopie",
+          "scanner thoracoabdominal"
+        ],
+        "population": "adulte",
+        "condition": "hernie hiatale suspectée ou confirmée",
+        "modalite": "aucune imagerie en première intention ; scanner thoracoabdominal en seconde intention",
+        "urgence": "programmée",
+        "justification": "Aucune imagerie n’est indiquée en première intention. Le scanner thoracoabdominal est réservé au bilan préopératoire ou en cas de particularités découvertes à l’endoscopie.",
+        "contre_indications": [],
+        "niveau_preuve": "fort",
+        "summary_text": "En cas de hernie hiatale, aucun examen d’imagerie n’est indiqué en première intention. Un scanner thoracoabdominal peut être réalisé en préopératoire ou après découverte endoscopique particulière. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Hernie hiatale" }
+    },
+    {
+        "id": "abdomen_hernie_inguinale_enfant_v1",
+        "motif": "hernie inguinale",
+        "mots_cles": [
+          "hernie inguinale",
+          "douleur scrotale",
+          "échographie inguinale",
+          "enfant"
+        ],
+        "population": "enfant",
+        "condition": "hernie inguinale chez l’enfant",
+        "modalite": "échographie inguinale (cas particuliers)",
+        "urgence": "programmée",
+        "justification": "L’échographie inguinale peut être indiquée dans certains cas après avis spécialisé, en cas de doute clinique avec pathologie scrotale.",
+        "contre_indications": [],
+        "niveau_preuve": "modéré",
+        "summary_text": "Chez l’enfant, l’échographie inguinale peut être indiquée après avis spécialisé lorsqu’il existe un doute clinique entre hernie et pathologie scrotale. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Hernie inguinale (enfant)" }
+    },
+    {
+        "id": "abdomen_hernie_inguinale_adulte_v1",
+        "motif": "hernie inguinale",
+        "mots_cles": [
+          "hernie inguinale",
+          "échographie pariétale",
+          "adulte",
+          "préopératoire"
+        ],
+        "population": "adulte",
+        "condition": "hernie inguinale chez l’adulte",
+        "modalite": "échographie-Doppler pariétale (2e intention)",
+        "urgence": "programmée",
+        "justification": "Pas d’imagerie en première intention. L’échographie-Doppler pariétale n’est indiquée que si la suspicion clinique n’est pas confirmée ou à la demande du chirurgien en préopératoire.",
+        "contre_indications": [],
+        "niveau_preuve": "fort",
+        "summary_text": "Chez l’adulte, l’échographie-Doppler pariétale n’est indiquée qu’en cas de doute clinique sur une hernie inguinale ou à la demande du chirurgien en préopératoire. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Hernie inguinale (adulte)" }
+    },
+    {
+        "id": "abdomen_invagination_v1",
+        "motif": "douleur abdominale aiguë",
+        "mots_cles": [
+          "invagination intestinale",
+          "occlusion intestinale",
+          "douleur abdominale",
+          "lavement opaque"
+        ],
+        "population": "enfant",
+        "condition": "invagination intestinale aiguë",
+        "modalite": "échographie abdominale (1ère intention)",
+        "urgence": "immédiate",
+        "justification": "L’échographie est un examen très sensible et spécifique pour le diagnostic positif d’invagination intestinale aiguë chez l’enfant.",
+        "contre_indications": [],
+        "niveau_preuve": "fort",
+        "summary_text": "Devant des douleurs abdominales aiguës paroxystiques chez un enfant, l’échographie abdominale est l’examen de première intention pour diagnostiquer une invagination intestinale. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Invagination intestinale aiguë" }
+    },
+    {
+        "id": "abdomen_lavement_invagination_v1",
+        "motif": "invagination intestinale",
+        "mots_cles": [
+          "lavement opaque",
+          "insufflation colique",
+          "réduction invagination",
+          "produit de contraste"
+        ],
+        "population": "enfant",
+        "condition": "invagination intestinale confirmée",
+        "modalite": "lavement opaque ou insufflation colique (examen spécialisé)",
+        "urgence": "immédiate",
+        "justification": "Un lavement avec produit de contraste ou une insufflation d’air est indiqué pour la tentative de réduction de l’invagination en milieu spécialisé.",
+        "contre_indications": [],
+        "niveau_preuve": "fort",
+        "summary_text": "En cas d’invagination intestinale confirmée, un lavement opaque ou une insufflation colique est indiqué pour tenter une réduction en milieu spécialisé. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Lavement invagination" }
+    },
+    {
+        "id": "abdomen_lithiase_vesiculaire_v1",
+        "motif": "douleur abdominale",
+        "mots_cles": [
+          "lithiase vésiculaire",
+          "calculs biliaires",
+          "colique hépatique",
+          "cholécystite",
+          "échographie foie-voies biliaires-pancréas"
+        ],
+        "population": "adulte",
+        "condition": "suspicion de lithiase vésiculaire",
+        "modalite": "échographie-Doppler foie-voies biliaires-pancréas",
+        "urgence": "variable (priorité 1–3 selon symptômes)",
+        "justification": "L’échographie est l’examen de première intention pour la recherche de calculs dans la vésicule biliaire ou les voies biliaires. Elle permet aussi de détecter une cholécystite ou une dilatation des voies biliaires.",
+        "contre_indications": [],
+        "niveau_preuve": "fort",
+        "summary_text": "Chez un patient présentant une douleur abdominale évocatrice de colique hépatique ou de cholécystite, l’échographie-Doppler foie-voies biliaires-pancréas est l’examen de première intention. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Lithiase vésiculaire" }
+    },
+    {
+        "id": "abdomen_maladie_coeliaque_v1",
+        "motif": "maladie coeliaque",
+        "mots_cles": [
+          "maladie coeliaque",
+          "intolérance au gluten",
+          "IRM intestinale",
+          "atrophie villositaire"
+        ],
+        "population": "adulte",
+        "condition": "bilan de maladie coeliaque après diagnostic biologique",
+        "modalite": "IRM abdominale (2e intention)",
+        "urgence": "programmée",
+        "justification": "L’IRM peut être indiquée après avis gastroentérologique pour le bilan d’extension de la maladie coeliaque.",
+        "contre_indications": [],
+        "niveau_preuve": "modéré",
+        "summary_text": "Dans la maladie coeliaque, aucune imagerie n’est indiquée en première intention. Une IRM peut être réalisée après avis spécialisé pour le bilan d’extension. (ADERIM 2025, Système Digestif).",
+        "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Maladie coeliaque" }
+    },
+    {
+      "id": "abdomen_nodule_hepatique_v1",
+      "motif": "nodule hépatique ou masse du foie",
+      "mots_cles": [
+        "nodule hépatique",
+        "masse hépatique",
+        "tumeur hépatique",
+        "kyste du foie",
+        "hémangiome",
+        "échographie de contraste",
+        "IRM foie"
+      ],
+      "population": "adulte",
+      "condition": "découverte d’un nodule hépatique",
+      "modalite": "échographie abdominale avec ou sans contraste (1ère intention)",
+      "urgence": "programmée (priorité 3)",
+      "justification": "L’échographie, éventuellement avec contraste, peut permettre le diagnostic d’hémangiome, de kyste ou de tumeur hépatocytaire bénigne sans imagerie complémentaire.",
+      "contre_indications": [],
+      "niveau_preuve": "fort",
+      "summary_text": "Devant un nodule hépatique, l’échographie abdominale est l’examen de première intention. L’utilisation de contraste permet souvent de caractériser un hémangiome, un kyste ou une tumeur bénigne sans autre imagerie. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Nodule hépatique (1ère intention)" }
+    },
+    {
+      "id": "abdomen_IRM_nodule_hepatique_v1",
+      "motif": "nodule hépatique",
+      "mots_cles": [
+        "IRM hépatique",
+        "IRM foie",
+        "échographie de contraste",
+        "kyste atypique",
+        "tumeur hépatocytaire bénigne",
+        "caractérisation hépatique"
+      ],
+      "population": "adulte",
+      "condition": "nodule hépatique non caractérisé en échographie",
+      "modalite": "IRM hépatique (2e intention)",
+      "urgence": "programmée",
+      "justification": "L’IRM est indiquée lorsque l’échographie ne permet pas de caractériser le nodule. L’association IRM + échographie de contraste peut être nécessaire pour les kystes atypiques ou les tumeurs bénignes. Le scanner n’est indiqué qu’en cas de contre-indication à l’IRM.",
+      "contre_indications": ["claustrophobie sévère", "dispositif métallique non compatible"],
+      "niveau_preuve": "fort",
+      "summary_text": "Lorsque l’échographie ne permet pas de caractériser un nodule hépatique, l’IRM hépatique est indiquée. L’association IRM et échographie de contraste peut être nécessaire pour les kystes atypiques ou les tumeurs bénignes. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Nodule hépatique (IRM)" }
+    },
+    {
+      "id": "abdomen_parasitose_intestinale_v1",
+      "motif": "parasitose intestinale ou infection digestive",
+      "mots_cles": [
+        "parasitose intestinale",
+        "hydatidose",
+        "échinococcose",
+        "douve hépatique",
+        "abcès hépatique",
+        "IRM abdominale",
+        "scanner abdominopelvien"
+      ],
+      "population": "adulte",
+      "condition": "suspicion de parasitose intestinale avec atteinte viscérale",
+      "modalite": "scanner abdominopelvien ou IRM (2e intention)",
+      "urgence": "programmée (priorité 2–3)",
+      "justification": "En cas de parasitose intestinale, le scanner ou l’IRM peuvent être réalisés selon l’étiologie suspectée (douve, échinococcose, hydatidose). Ces examens permettent la recherche d’abcès, de trajets viscéraux et de kystes, après avis spécialisé.",
+      "contre_indications": ["allergie au produit de contraste iodé (scanner)"],
+      "niveau_preuve": "modéré",
+      "summary_text": "En cas de suspicion de parasitose intestinale (hydatidose, échinococcose, douve hépatique), le scanner ou l’IRM abdominopelvienne peuvent être indiqués pour rechercher des abcès, trajets viscéraux ou kystes après avis spécialisé. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Parasitose intestinale" }
+    },
+    {
+      "id": "abdomen_ulcere_gastroduodenal_v1",
+      "motif": "douleur épigastrique ou suspicion d’ulcère",
+      "mots_cles": [
+        "ulcère gastroduodénal",
+        "perforation",
+        "hémorragie digestive",
+        "scanner abdominopelvien",
+        "douleur épigastrique"
+      ],
+      "population": "adulte",
+      "condition": "ulcère gastroduodénal suspecté ou compliqué",
+      "modalite": "scanner abdominopelvien (2e intention)",
+      "urgence": "immédiate (priorité 1)",
+      "justification": "Aucune imagerie n’est indiquée en première intention. Le scanner abdominopelvien avec injection est indiqué en cas de complication, notamment suspicion de perforation.",
+      "contre_indications": ["allergie au produit de contraste iodé"],
+      "niveau_preuve": "fort",
+      "summary_text": "En cas d’ulcère gastroduodénal compliqué, notamment en cas de suspicion de perforation, un scanner abdominopelvien avec injection est indiqué. Aucune imagerie n’est nécessaire en première intention pour un ulcère non compliqué. (ADERIM 2025, Système Digestif).",
+      "source": { "organisation": "ADERIM", "annee": 2025, "ref": "Système digestif – Ulcère gastroduodénal" }
+    }    
+  ]
+  
