@@ -1,9 +1,33 @@
+echo "# Python cache
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
 .venv/
 .env/
+venv/
+
+# Dependency & build files
 uv.lock
+*.egg-info/
+dist/
+build/
+
+# Vector databases & embeddings
 vectorstore/
 chroma/
+faiss_index/
+
+# Notebooks
 .ipynb_checkpoints/
+
+# macOS system
 .DS_Store
+
+# Logs / temp
+*.log
+*.tmp
+" > .gitignore
+
