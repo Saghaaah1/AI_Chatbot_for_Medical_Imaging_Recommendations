@@ -1,21 +1,31 @@
 # main.py
-"""
-AI Chatbot for Medical Imaging Recommendations (RAG Project)
------------------------------------------------------------
-Author: Sara El Bari
-Description: Clinical decision-support chatbot that recommends imaging
-based on French medical guidelines (ADERIM, SFR, HAS).
-"""
+from src.generation.pipeline import run_pipeline
 
-from src.ingestion.create_index import create_index
-from src.retrieval.query_engine import query_engine
+def cli():
+    print("Clinical imaging recommender (MVP). Type 'quit' to exit.\n")
+    while True:
+        q = input("Cas clinique: ").strip()
+        if not q or q.lower()=="quit":
+            break
+        try:
+            rec = run_pipeline(q, patient=None)
+            print("\n— Recommandation —")
+            print(f"• Modalité recommandée : {rec.modalite_recommandee}")
+            if rec.symptomes_cles:
+                print(f"• Symptômes clés : {', '.join(rec.symptomes_cles)}")
+            if rec.hypothese_clinique:
+                print(f"• Hypothèse clinique : {rec.hypothese_clinique}")
+            print(f"• Urgence : {rec.urgence}")
+            if rec.alternative:
+                print(f"• Alternative : {rec.alternative}")
+            if rec.delai_recommande:
+                print(f"• Délai recommandé : {rec.delai_recommande}")
+            print(f"• Justification : {rec.justification}")
+            print(f"• Référence : {rec.reference}")
+            print("—" * 60 + "\n")
+        except Exception as e:
+            print("⚠️  Impossible de générer une recommandation:", e)
 
 if __name__ == "__main__":
-    print("===RAG Medical Chatbot ===")
-    print("1. Building or loading the vector database...")
-    create_index()
-
-    print("2. Asking a test clinical question...")
-    response = query_engine("Patiente de 45 ans, dyspnée aiguë, douleur thoracique pleuritique.")
-    print("\nResponse:\n", response)
+    cli()
 

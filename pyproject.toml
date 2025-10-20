@@ -13,7 +13,6 @@ dependencies = [
     # Core LLM/Hugging Face
     "transformers>=4.57.1",
     "accelerate",
-    "bitsandbytes", # CLÉ pour GPU T4 Colab
 
     # RAG Framework
     "langchain",
