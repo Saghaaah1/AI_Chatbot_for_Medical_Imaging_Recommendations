@@ -1,16 +1,12 @@
 # src/generation/pipeline.py
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List, Tuple
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from src.generation.synthesizer import synthesize_from_doc
 from src.generation.schema import Recommendation
 
-# safety_notes is optional; guard the import
-try:
-    from src.generation.guardrails import safety_notes  # def safety_notes(user_text, modality, requires_contrast) -> List[str]
-except Exception:  # pragma: no cover
-    def safety_notes(*args, **kwargs) -> List[str]:
-        return []
+ENABLE_HINTS = True
+DEBUG = True
 
 def load_vectorstore(device: str = "cpu") -> Chroma:
     embeddings = HuggingFaceEmbeddings(
@@ -24,61 +20,58 @@ def load_vectorstore(device: str = "cpu") -> Chroma:
         collection_name="aderim",
     )
 
-def build_query(user_text: str, patient: Optional[Dict[str, Any]] = None) -> str:
-    base = user_text.strip().lower()
-    tags = []
-    if any(w in base for w in ["nourrisson", "3 mois", "fontanelle", "macrocrân", "périmètre crânien"]):
-        tags.append("pédiatrie crâne non trauma macrocrânie transfontanellaire échographie")
-    if "grossesse" in base or "enceinte" in base:
-        tags.append("non ionisant IRM échographie éviter scanner")
-    extra = " | ".join(tags)
-    if patient:
-        extras = " ".join(f"{k}:{v}" for k, v in patient.items() if v)
-        return f"{base} | {extra} | {extras}".strip(" |")
-    return f"{base} | {extra}".strip(" |")
+def build_query(user_text: str, patient: Dict[str, Any] | None = None) -> str:
+    base = (user_text or "").strip().lower()
+    tags: List[str] = []
 
-def run_pipeline(
-    user_text: str,
-    patient: Optional[Dict[str, Any]] = None,
-    device: str = "cpu",
-    k: int = 6,
-) -> Recommendation:
+    if ENABLE_HINTS:
+        if any(w in base for w in ["nourrisson", "3 mois", "fontanelle", "macrocrân", "périmètre crânien"]):
+            tags.append("pédiatrie crâne non trauma macrocrânie transfontanellaire échographie")
+        if "grossesse" in base or "enceinte" in base:
+            tags.append("non ionisant IRM échographie éviter scanner")
+
+    extras: List[str] = []
+    if patient:
+        extras.append(" ".join(f"{k}:{v}" for k, v in patient.items() if v))
+
+    q = " | ".join([s for s in [base, *tags, *extras] if s])
+    return q
+
+def run_pipeline(user_text: str, patient: Dict[str, Any] | None = None, device: str = "cpu") -> Recommendation:
     if not user_text or not user_text.strip():
         raise ValueError("Empty user_text.")
 
     db = load_vectorstore(device=device)
     q = build_query(user_text, patient)
 
-    # Retrieve top-k (with scores so you can log/inspect)
-    results = db.similarity_search_with_relevance_scores(q, k=k)
+    results: List[Tuple[Any, float]] = db.similarity_search_with_relevance_scores(q, k=6)
     if not results:
         raise RuntimeError("No retrieval results.")
 
-    # Unpack documents and keep neighbors for alternative suggestions
-    docs: List = [doc for (doc, _score) in results]
-    top_doc = docs[0]
+    # Optional tiny bias for macrocrânie (safe nudge, not required)
+    def boost(doc) -> float:
+        m = doc.metadata or {}
+        mod = (m.get("modalite") or "").lower()
+        patho = (m.get("pathologie") or "").lower()
+        t = user_text.lower()
+        score = 0.0
+        if any(w in t for w in ["macrocrân", "périmètre crânien", "fontanelle", "nourrisson", "3 mois"]):
+            if "échographie transfontanellaire" in mod:
+                score += 0.15
+            if "traumatisme" in patho:
+                score -= 0.10
+        return score
 
-    # Synthesize a structured recommendation (passes user_text through)
-    rec = synthesize_from_doc(
-        doc=top_doc,
-        neighbor_docs=docs,
-        user_text=user_text,
-    )
+    results = sorted(results, key=lambda rs: boost(rs[0]), reverse=True)
 
-    # Optional: append short safety notes based on modality/contrast context
-    # requires_contrast = top_doc.metadata.get("requires_contrast")
-    # notes = safety_notes(user_text, rec.modalite_recommandee, requires_contrast)
-    # if notes:
-    #    rec.justification = (rec.justification.rstrip().rstrip(".") + ". " + " | ".join(notes)).strip()
+    top_k_docs = [r[0] for r in results[:5]]
+    top_doc = top_k_docs[0]
 
-    # Debug: log top candidates
-    for i, (doc, score) in enumerate(results[:min(5, len(results))], start=1):
-        mid = doc.metadata.get("id")
-        mod = doc.metadata.get("modalite")
-        print(f"[DEBUG] cand#{i} id={mid} score={score:.3f} modalite={mod}")
-    print(f"[DEBUG] chosen={top_doc.metadata.get('id')}")
+    rec = synthesize_from_doc(top_doc, neighbor_docs=top_k_docs, user_text=user_text)
+
+    if DEBUG:
+        for i, (doc, score) in enumerate(results[:min(5, len(results))], start=1):
+            print(f"[DEBUG] cand#{i} id={doc.metadata.get('id')} score={score:.3f} modalite={doc.metadata.get('modalite')}")
+        print(f"[DEBUG] chosen={top_doc.metadata.get('id')}")
 
     return rec
-
-
-
