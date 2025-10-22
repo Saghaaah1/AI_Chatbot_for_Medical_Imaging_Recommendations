@@ -31,3 +31,7 @@ faiss_index/
 *.tmp
 " > .gitignore
 
+
+# local index
+vectorstore/
+
