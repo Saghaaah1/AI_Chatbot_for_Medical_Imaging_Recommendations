@@ -9,22 +9,26 @@ dependencies = [
     # API/Web Deployment (FLASK)
     "flask>=3.1.2",
     "uvicorn", # Serveur ASGI pour Flask/FastAPI
-
     # Core LLM/Hugging Face
     "transformers>=4.57.1",
     "accelerate",
-
     # RAG Framework
     "langchain",
-    "langchain-community", 
-
+    "langchain-community",
     # Data Ingestion & Vectorization
     "pypdf",
     "sentence-transformers",
     "chromadb",
-
     # Data Science Tools (Pour le traitement des entrées/sorties)
     "numpy>=2.3.4",
     "pandas>=2.3.3",
     "scikit-learn>=1.7.2",
+    "gradio>=5.49.1",
+    "torch>=2.9.0",
+    "torchvision>=0.24.0",
+    "torchaudio>=2.9.0",
+    "langchain-chroma>=1.0.0",
+    "langchain-huggingface>=1.0.0",
+    "hnswlib>=0.8.0",
+    "python-dotenv>=1.1.1",
 ]
