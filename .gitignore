@@ -35,3 +35,4 @@ faiss_index/
 # local index
 vectorstore/
 
+.vscode/
