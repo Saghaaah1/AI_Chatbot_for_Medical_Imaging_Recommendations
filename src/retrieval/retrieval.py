@@ -13,11 +13,17 @@ Retrieval:
 import os
 import sys
 from typing import Dict, List, Optional
+import os as _os
 
 # Vector DB + embeddings
 from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.documents import Document
+from langsmith import traceable
+
+_os.environ.setdefault("LANGCHAIN_TRACING_V2", "true")
+_os.environ.setdefault("LANGCHAIN_PROJECT", "Medical-Imaging-RAG")
+
 
 # ---- Config (matches your indexer) ----
 DB_DIR = "vectorstore"
@@ -80,6 +86,10 @@ def _infer_population_filter(user_query: str) -> Optional[Dict[str, str]]:
 
     return None
 
+# ---------------------------
+# RETRIEVAL 
+# ---------------------------
+@traceable(name="retrieve", run_type="retriever")
 def retrieve(query_text: str, k: int = DEFAULT_K, filters: Optional[Dict[str, str]] = None) -> List[Document]:
     """Main retrieval function we'll reuse everywhere."""
     db = get_store()
@@ -93,10 +103,28 @@ def retrieve(query_text: str, k: int = DEFAULT_K, filters: Optional[Dict[str, st
     final_filter = dict(filters or {})
     if auto and "population" not in final_filter:
         final_filter.update(auto)
+        
+    # Attach run attributes to help debug in LangSmith
+    try:
+        from langsmith.run_helpers import trace
+        trace.set_attributes({
+            "k": k,
+            "filters": final_filter or {},
+            "auto_population": (auto or {}).get("population", None),
+            "device": DEVICE,
+            "model": EMBEDDING_MODEL,
+            "collection": COLLECTION,
+        })
+    except Exception:
+        pass
+
 
     if final_filter:
         return db.similarity_search(q, k=k, filter=final_filter)
     return db.similarity_search(q, k=k)
+
+
+
 
 def pretty(doc: Document) -> str:
     """Short one-line display for CLI/tests."""

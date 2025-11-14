@@ -21,6 +21,10 @@ from typing import Dict, Any, List
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_huggingface import HuggingFaceEmbeddings
+from langsmith import traceable
+
+os.environ.setdefault("LANGCHAIN_TRACING_V2", "true")
+os.environ.setdefault("LANGCHAIN_PROJECT", "Imagerie-RAG")
 
 # ----------------------------
 # Hardware detection (GPU/CPU)
@@ -233,6 +237,7 @@ def record_to_documents(rec: Dict[str, Any]) -> List[Document]:
 # ------------
 # Main script
 # ------------
+@traceable(name="build_index", tags=["ingestion"], metadata={"collection": COLLECTION_NAME})
 def main():
     # Optional: start from a clean slate by deleting any previous index.
     if NUKE_BEFORE_BUILD and os.path.exists(VECTOR_DIR):
@@ -322,6 +327,11 @@ def main():
     # Tip to query later:
     # Use: similarity_search("query: <your question>", k=5)
     # because e5 models expect 'query:' prefix for queries and 'passage:' for docs.
+    return {
+        "docs_indexed": len(docs),
+        "device": DEVICE,
+        "collection": COLLECTION_NAME,
+    }
 
 if __name__ == "__main__":
     main()

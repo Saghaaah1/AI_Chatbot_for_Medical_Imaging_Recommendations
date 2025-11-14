@@ -17,11 +17,17 @@ import os
 import json
 import time
 from typing import Dict, List, Iterable, Optional
-
 import requests
+import os as _os2
 
 # Retrieval entrypoint (your single-file retriever)
 from src.retrieval.retrieval import retrieve, DEFAULT_K
+from langsmith import traceable
+
+
+_os2.environ.setdefault("LANGCHAIN_TRACING_V2", "true")
+_os2.environ.setdefault("LANGCHAIN_PROJECT", "Medical-Imaging-RAG")
+
 
 OLLAMA_URL = os.getenv("OLLAMA_URL", "http://localhost:11434")
 MODEL = os.getenv("OLLAMA_MODEL", "qwen2.5:3b-instruct")
@@ -126,11 +132,26 @@ def _strip_fences(text: str) -> str:
 
 # --------------------------- Ollama calls ---------------------------
 
+@traceable(name="ollama_chat", run_type="llm")
 def _ollama_chat(system: str, user: str, *, temperature: float = 0.2, num_ctx: int = 3072, stream: bool = False):
     """
     Call Ollama /api/chat (non-stream or stream).
     Includes a small retry if the first request fails (e.g., model not warm).
     """
+    # Attach LLM call details to the run
+    try:
+        from langsmith.run_helpers import trace
+        trace.set_attributes({
+            "provider": "ollama",
+            "model": MODEL,
+            "temperature": temperature,
+            "num_ctx": num_ctx,
+            "stream": stream,
+            "base_url": OLLAMA_URL,
+        })
+    except Exception:
+        pass
+
     url = f"{OLLAMA_URL}/api/chat"
     payload = {
         "model": MODEL,
@@ -161,8 +182,7 @@ def _ollama_chat(system: str, user: str, *, temperature: float = 0.2, num_ctx: i
                 f"Model='{MODEL}'. Original error: {e}"
             )
 
-# --------------------------- Public API ---------------------------
-
+@traceable(name="generate_answer", run_type="chain", tags=["rag"])
 def generate_answer(
     question: str,
     k: int = DEFAULT_K,
@@ -175,7 +195,29 @@ def generate_answer(
     Non-streaming generation: returns a JSON dict with normalized schema.
     Safe defaults for M1 8 GB (short context, low temperature).
     """
+    # Record inputs
+    try:
+        from langsmith.run_helpers import trace
+        trace.set_attributes({
+            "k": k,
+            "question": question,
+            "max_chars_snippet": max_chars_snippet,
+            "temperature": temperature,
+            "num_ctx": num_ctx,
+        })
+    except Exception:
+        pass
+
     docs = retrieve(question, k=k)
+    try:
+        from langsmith.run_helpers import trace
+        trace.set_attributes({
+            "retrieved_count": len(docs),
+            "retrieved_ids": [d.metadata.get("id") for d in docs] if docs else [],
+        })
+    except Exception:
+        pass
+
     if not docs:
         # No context: return a predictable, safe empty result
         return {
@@ -204,10 +246,22 @@ def generate_answer(
             "indications_negatives": [],
             "precautions": ["Sortie du modèle non-JSON. Réduis k ou la taille des extraits, ou baisse temperature."],
             "citations": [],
-            "_raw": raw,  # keep raw for debugging if you want
+            "_raw": raw,
         }
-    return _ensure_schema(out, len(docs))
 
+    # compute → trace → return
+    result = _ensure_schema(out, len(docs))
+    try:
+        from langsmith.run_helpers import trace
+        trace.set_attributes({"output_keys": list(result.keys())})
+    except Exception:
+        pass
+    return result
+
+
+
+
+@traceable(name="generate_stream", run_type="chain", tags=["rag", "stream"])
 def generate_stream(
     question: str,
     k: int = DEFAULT_K,
@@ -220,7 +274,28 @@ def generate_stream(
     Streaming generator (yields raw text chunks) — handy for Streamlit.
     You can buffer and parse at the end, or display the stream to the user.
     """
+    try:
+        from langsmith.run_helpers import trace
+        trace.set_attributes({
+            "k": k,
+            "question": question,
+            "max_chars_snippet": max_chars_snippet,
+            "temperature": temperature,
+            "num_ctx": num_ctx,
+        })
+    except Exception:
+        pass
+
     docs = retrieve(question, k=k)
+    try:
+        from langsmith.run_helpers import trace
+        trace.set_attributes({
+            "retrieved_count": len(docs),
+            "retrieved_ids": [d.metadata.get("id") for d in docs] if docs else [],
+        })
+    except Exception:
+        pass
+
     if not docs:
         yield '{"recommandation":"information insuffisante","indications_positives":[],"indications_negatives":[],"precautions":["Aucune source trouvée"],"citations":[]}'
         return
