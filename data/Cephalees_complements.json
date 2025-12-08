@@ -1,0 +1,504 @@
+[
+  {
+    "id": "neuro_cephalee_migraine_sans_aura_v1",
+    "systeme": "neuro",
+    "pathologie": "migraine sans aura",
+    "modalite": "diagnostic clinique (interrogatoire)",
+    "resume": "La migraine est un diagnostic d'interrogatoire reposant sur des critères stricts (durée, unilatéralité, pulsatilité, intensité, signes digestifs ou sensoriels).",
+    "urgence_enum": "standard",
+    "populations": null,
+    "symptomes": [
+      "céphalée unilatérale",
+      "céphalée pulsatile",
+      "intensité modérée à sévère",
+      "aggravation par l'effort",
+      "photophobie",
+      "phonophobie",
+      "nausées",
+      "vomissements"
+    ],
+    "indications_positives": [
+      "critères diagnostiques internationaux réunis",
+      "examen neurologique normal"
+    ],
+    "indications_negatives": [],
+    "ionisant": false,
+    "requires_contrast": null,
+    "priorite": null,
+    "dose": null,
+    "reference_section": "I - Céphalée migraineuse",
+    "source": "Ruppert & Nasr, 2025",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["hémicrânie"]
+  },
+  {
+    "id": "neuro_cephalee_migraine_avec_aura_v1",
+    "systeme": "neuro",
+    "pathologie": "migraine avec aura",
+    "modalite": "diagnostic clinique (interrogatoire)",
+    "resume": "Migraine précédée ou accompagnée d'un déficit neurologique focal transitoire (visuel, sensitif ou phasique) durant moins de 60 minutes.",
+    "urgence_enum": "standard",
+    "populations": null,
+    "symptomes": [
+      "scotome",
+      "hémianopsie latérale homonyme",
+      "scintillements",
+      "flashs lumineux",
+      "paresthésies",
+      "aphasie",
+      "céphalée post-aura"
+    ],
+    "indications_positives": [
+      "déficit neurologique focal progressif < 60 min",
+      "réversibilité totale des symptômes"
+    ],
+    "indications_negatives": [],
+    "ionisant": false,
+    "requires_contrast": null,
+    "priorite": null,
+    "dose": null,
+    "reference_section": "I - Céphalée migraineuse",
+    "source": "Ruppert & Nasr, 2025",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["migraine ophtalmique"]
+  },
+  {
+    "id": "neuro_cephalee_tension_v1",
+    "systeme": "neuro",
+    "pathologie": "céphalée de tension",
+    "modalite": "diagnostic clinique (interrogatoire)",
+    "resume": "Céphalée fréquente souvent liée à une composante psychologique, se distinguant de la migraine par son caractère bilatéral, non pulsatile et l'absence de signes digestifs.",
+    "urgence_enum": "standard",
+    "populations": null,
+    "symptomes": [
+      "douleur pression / pesanteur",
+      "non pulsatile",
+      "intensité légère à modérée",
+      "topographie bilatérale",
+      "douleur postérieure (nuque, occiput)",
+      "pas d'aggravation par la marche"
+    ],
+    "indications_positives": ["critères diagnostiques internationaux réunis"],
+    "indications_negatives": [
+      "nausées",
+      "vomissements",
+      "photophobie",
+      "phonophobie"
+    ],
+    "ionisant": false,
+    "requires_contrast": null,
+    "priorite": null,
+    "dose": null,
+    "reference_section": "II - Céphalée de tension",
+    "source": "Ruppert & Nasr, 2025",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["céphalées chroniques quotidiennes"]
+  },
+  {
+    "id": "neuro_cephalee_syndrome_meninge_scanner_v1",
+    "systeme": "neuro",
+    "pathologie": "syndrome méningé (hémorragie méningée, méningite)",
+    "modalite": "scanner cérébral",
+    "resume": "Devant un syndrome méningé fébrile ou non, le scanner cérébral est souvent réalisé avant la ponction lombaire pour éliminer une contre-indication (processus expansif).",
+    "urgence_enum": "immédiate",
+    "populations": null,
+    "symptomes": [
+      "céphalée intense",
+      "céphalée diffuse en casque",
+      "vomissements",
+      "photophobie",
+      "raideur de la nuque",
+      "signe de Kernig",
+      "signe de Brudzinski",
+      "trouble de la vigilance"
+    ],
+    "indications_positives": [
+      "suspicion hémorragie méningée",
+      "suspicion méningite",
+      "céphalée aigue brutale"
+    ],
+    "indications_negatives": [],
+    "ionisant": true,
+    "requires_contrast": "depends",
+    "priorite": "1ère intention",
+    "dose": null,
+    "reference_section": "III - Céphalée du syndrome meningé",
+    "source": "Ruppert & Nasr, 2025",
+    "year": 2025,
+    "link": "",
+    "synonymes": []
+  },
+  {
+    "id": "neuro_cephalee_hic_imagerie_v1",
+    "systeme": "neuro",
+    "pathologie": "syndrome d'hypertension intracrânienne (HIC)",
+    "modalite": "scanner ou IRM cérébrale",
+    "resume": "Urgence vitale nécessitant une imagerie pour identifier la lésion causale (tumeur, hématome, thrombose) et les signes d'engagement.",
+    "urgence_enum": "immédiate",
+    "populations": null,
+    "symptomes": [
+      "céphalée diffuse en casque",
+      "céphalée matutinale",
+      "céphalée par crises",
+      "aggravation par la toux/effort",
+      "vomissements en jet",
+      "flou visuel",
+      "éclipses visuelles",
+      "diplopie",
+      "oedème papillaire",
+      "troubles de la vigilance"
+    ],
+    "indications_positives": [
+      "signes d'HIC",
+      "suspicion processus expansif intracrânien",
+      "suspicion thrombose veineuse cérébrale",
+      "suspicion hydrocéphalie aigue"
+    ],
+    "indications_negatives": [],
+    "ionisant": null,
+    "requires_contrast": "depends",
+    "priorite": "1ère intention",
+    "dose": null,
+    "reference_section": "IV - Céphalée du syndrome d'hypertension intra crânienne (HIC)",
+    "source": "Ruppert & Nasr, 2025",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["HTIC"]
+  }
+  {
+    "id": "neuro_cephalee_aigue_urgence_hsa_v1",
+    "systeme": "neuro",
+    "pathologie": "céphalée brutale (Hémorragie Sous-Arachnoïdienne – HSA)",
+    "modalite": "scanner cérébral immédiat",
+    "resume": "Toute céphalée brutale (maximale en moins d'une heure, ou 'en coup de tonnerre') est une HSA jusqu'à preuve du contraire. Nécessite un scanner immédiat.",
+    "urgence_enum": "immédiate",
+    "populations": ["adulte", "enfant"],
+    "symptomes": [
+      "céphalée en coup de tonnerre",
+      "céphalée brutale (maximale < 1h)",
+      "raideur méningée (sans fièvre)",
+      "vomissements",
+      "déficit neurologique focal"
+    ],
+    "indications_positives": [
+      "céphalée récente et inhabituelle",
+      "suspicion HSA",
+      "céphalée brutale ou en coup de tonnerre"
+    ],
+    "indications_negatives": [],
+    "ionisant": true,
+    "requires_contrast": "depends",
+    "priorite": "1ère intention",
+    "dose": null,
+    "reference_section": "D. Détermination de la nature aiguë ou chronique / Tableau 9.4",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["scanner cérébral en urgence"]
+  },
+  {
+    "id": "neuro_cephalee_hic_scanner_irm_v2",
+    "systeme": "neuro",
+    "pathologie": "syndrome d'hypertension intracrânienne (HTIC)",
+    "modalite": "scanner ou IRM (sans et avec injection) en urgence",
+    "resume": "HTIC (début souvent progressif) : recherche processus occupant de l'espace (tumeur, hématome, abcès) ou hydrocéphalie. L'imagerie est impérative avant la ponction lombaire.",
+    "urgence_enum": "immédiate",
+    "populations": ["adulte", "enfant"],
+    "symptomes": [
+      "céphalée progressive",
+      "céphalée matinale",
+      "aggravation par toux/effort/décubitus",
+      "vomissements en jet",
+      "diplopie horizontale (atteinte du VI)",
+      "éclipses visuelles",
+      "oedème papillaire",
+      "trouble de la vigilance"
+    ],
+    "indications_positives": ["signes d'HTIC", "suspicion TVC", "suspicion processus expansif"],
+    "indications_negatives": ["ponction lombaire (contre-indiquée avant imagerie)"],
+    "ionisant": null,
+    "requires_contrast": true,
+    "priorite": "1ère intention",
+    "dose": null,
+    "reference_section": "II. Connaître les principales causes de céphalées nécessitant une prise en charge en urgence / Tableau 9.3",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["imagerie HIC"]
+  },
+  {
+    "id": "neuro_cephalee_tvc_irm_veinoscanner_v1",
+    "systeme": "neuro",
+    "pathologie": "thrombose veineuse cérébrale (TVC)",
+    "modalite": "IRM + veinographie par IRM ou Scanner + angioscanner veineux",
+    "resume": "Suspicion en cas de céphalée (souvent progressive, avec signes d'HTIC) dans un contexte à risque (contraception orale, post-partum).",
+    "urgence_enum": "rapide (<6h)",
+    "populations": ["adulte", "enfant"],
+    "symptomes": [
+      "céphalée progressive",
+      "hypertension intracrânienne",
+      "signes focaux",
+      "épilepsie"
+    ],
+    "indications_positives": [
+      "facteurs de risque de thrombose veineuse",
+      "suspicion TVC"
+    ],
+    "indications_negatives": [],
+    "ionisant": null,
+    "requires_contrast": true,
+    "priorite": "1ère intention",
+    "dose": null,
+    "reference_section": "Tableau 9.4. Principales causes de céphalée récente à début brutal",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["veinographie"]
+  },
+  {
+    "id": "neuro_cephalee_meningite_irm_v1",
+    "systeme": "neuro",
+    "pathologie": "méningite et méningo-encéphalite",
+    "modalite": "IRM cérébrale (si déficit focal ou avant PL, au besoin)",
+    "resume": "L'IRM est indiquée en cas de signes d'encéphalite (troubles de conscience, signes focaux, épilepsie) ou si une imagerie est nécessaire avant PL.",
+    "urgence_enum": "immédiate",
+    "populations": ["adulte", "enfant"],
+    "symptomes": [
+      "céphalée + fièvre",
+      "signes méningés",
+      "troubles de conscience",
+      "déficits focaux",
+      "épilepsie"
+    ],
+    "indications_positives": [
+      "céphalée fébrile avec déficit focal",
+      "céphalée fébrile avec troubles de conscience",
+      "suspicion d’encéphalite"
+    ],
+    "indications_negatives": ["PL d’emblée si absence de déficit focal"],
+    "ionisant": false,
+    "requires_contrast": "depends",
+    "priorite": "2e intention",
+    "dose": "0",
+    "reference_section": "Tableau 9.4. Principales causes de céphalée récente à début brutal",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["imagerie méningo-encéphalite"]
+  },
+  {
+    "id": "neuro_cephalee_aigue_non_indiquee_v1",
+    "systeme": "neuro",
+    "pathologie": "céphalée primaire (migraine, tension)",
+    "modalite": "aucun (diagnostic clinique)",
+    "resume": "Les céphalées primaires (anciennes, habituelles) ne nécessitent pas d'imagerie si l'examen clinique est normal et l'interrogatoire fiable, même en cas de crise sévère aux urgences.",
+    "urgence_enum": "standard",
+    "populations": ["adulte", "enfant"],
+    "symptomes": [
+      "céphalée ancienne et habituelle",
+      "absence de signe neurologique focal",
+      "examen clinique normal",
+      "pas de signe d'alarme"
+    ],
+    "indications_positives": ["critères migraineux typiques", "critères céphalée tension typiques"],
+    "indications_negatives": [
+      "imagerie cérébrale non indiquée si céphalée habituelle",
+      "ne pas différencier la réalisation d'examens si céphalée inhabituelle"
+    ],
+    "ionisant": false,
+    "requires_contrast": false,
+    "priorite": "Contre-indication relative",
+    "dose": "0",
+    "reference_section": "I. Savoir diagnostiquer une céphalée aiguë et une céphalée chronique",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["absence d'imagerie"]
+  },
+  {
+    "id": "neuro_cephalee_svcr_angiographie_v1",
+    "systeme": "neuro",
+    "pathologie": "syndrome de vasoconstriction cérébrale réversible (SVCR)",
+    "modalite": "angiographie (Angioscanner ou ARM) et imagerie parenchymateuse (Scanner/IRM)",
+    "resume": "Cause de céphalée en coup de tonnerre (répétée), souvent déclenchée par l'effort ou des substances vasoactives. L'angiographie recherche des sténoses segmentaires réversibles. L'imagerie doit être répétée si initialement normale.",
+    "urgence_enum": "rapide (<6h)",
+    "populations": ["adulte"],
+    "symptomes": [
+      "céphalée en coup de tonnerre",
+      "céphalée répétée",
+      "céphalée provoquée par effort/Valsalva/sexe",
+      "contexte post-partum",
+      "exposition substances vasoactives",
+      "complications hémorragiques/ischémiques"
+    ],
+    "indications_positives": [
+      "suspicion SVCR",
+      "céphalée en coup de tonnerre inexpliquée après élimination HSA"
+    ],
+    "indications_negatives": [
+      "angiographie peut être normale dans les 7 premiers jours"
+    ],
+    "ionisant": null,
+    "requires_contrast": true,
+    "priorite": "1ère ou 2e intention (après Scanner/PL)",
+    "dose": null,
+    "reference_section": "2. Syndrome de vasoconstriction cérébrale réversible (SVCR)",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["angiographie SVCR", "ARM/Angioscanner artériel"]
+  },
+  {
+    "id": "neuro_cephalee_hypotension_irm_lomb_v1",
+    "systeme": "neuro",
+    "pathologie": "syndrome d'hypotension intracrânienne (spontanée ou post-durale)",
+    "modalite": "IRM cérébrale avec Gadolinium (et si besoin PL ou blood-patch)",
+    "resume": "Céphalée posturale orthostatique (aggravée debout/assise, soulagée couchée). L'IRM recherche un rehaussement des méninges et un déplacement crânio-caudal des structures.",
+    "urgence_enum": "standard",
+    "populations": ["adulte"],
+    "symptomes": [
+      "céphalée posturale orthostatique",
+      "disparition en décubitus (< 15 min)",
+      "antécédent de brèche durale (PL, péridurale)",
+      "cervicalgies",
+      "acouphènes",
+      "paralysie du VI"
+    ],
+    "indications_positives": [
+      "céphalée posturale orthostatique typique",
+      "suspicion fuite de LCS"
+    ],
+    "indications_negatives": [
+      "IRM non nécessaire dans les formes post-PL typiques"
+    ],
+    "ionisant": false,
+    "requires_contrast": true,
+    "priorite": "1ère intention",
+    "dose": "0",
+    "reference_section": "3. Syndromes d'hypotension intracrânienne",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["IRM hypotension", "IRM méninges injectées"]
+  },
+  {
+    "id": "neuro_cephalee_horton_imagerie_exclusion_v1",
+    "systeme": "neuro",
+    "pathologie": "artérite temporale / maladie de Horton",
+    "modalite": "imagerie cérébrale d'exclusion (scanner/IRM)",
+    "resume": "Céphalée inhabituelle chez sujet > 50 ans. L'imagerie est utilisée pour éliminer les diagnostics différentiels neurologiques (AVC, Tumeur) avant la biopsie de l'artère temporale et la mesure de la CRP.",
+    "urgence_enum": "rapide (<24h)",
+    "populations": ["adulte (> 50 ans)"],
+    "symptomes": [
+      "âge > 50 ans",
+      "céphalée inhabituelle",
+      "altération de l'état général (AEG)",
+      "claudication de la mâchoire",
+      "douleurs des ceintures",
+      "CRP élevée"
+    ],
+    "indications_positives": [
+      "âge > 50 ans et céphalée inhabituelle",
+      "syndrome inflammatoire"
+    ],
+    "indications_negatives": [],
+    "ionisant": null,
+    "requires_contrast": null,
+    "priorite": "1ère intention (bilan d'exclusion)",
+    "dose": null,
+    "reference_section": "5. Maladie de Horton ou artérite temporale",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["IRM exclusion Horton"]
+  },
+  {
+    "id": "neuro_cephalee_ccq_irm_v1",
+    "systeme": "neuro",
+    "pathologie": "céphalée chronique quotidienne (CCQ)",
+    "modalite": "IRM cérébrale (sans urgence)",
+    "resume": "L'imagerie cérébrale est systématique au moins une fois chez tout patient ayant une CCQ (15 jours ou plus de céphalée par mois) pour éliminer une cause secondaire chronique (HTIC, hypotension, tumeur).",
+    "urgence_enum": "standard",
+    "populations": ["adulte", "enfant"],
+    "symptomes": [
+      "céphalée 15 jours/mois ou plus",
+      "céphalée chronique depuis > 3 mois",
+      "migraine chronique",
+      "céphalée de tension chronique"
+    ],
+    "indications_positives": [
+      "première consultation pour CCQ",
+      "diagnostic ne correspondant pas à une migraine sans aura caractéristique"
+    ],
+    "indications_negatives": [],
+    "ionisant": false,
+    "requires_contrast": "depends",
+    "priorite": "Systématique",
+    "dose": "0",
+    "reference_section": "C. Principales causes de céphalée chronique / Imagerie devant une céphalée chronique",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["IRM bilan chronique"]
+  },
+  {
+    "id": "neuro_cephalee_neuropathie_irm_v1",
+    "systeme": "neuro",
+    "pathologie": "neuropathies crâniennes douloureuses (névralgies)",
+    "modalite": "IRM cérébrale avec et sans Gadolinium (coupes fines sur le trajet du nerf)",
+    "resume": "Recherche une lésion du nerf (conflit vasculo-nerveux, SEP, tumeur, zona) sur tout son trajet, du noyau dans le tronc cérébral aux branches de division.",
+    "urgence_enum": "standard",
+    "populations": ["adulte"],
+    "symptomes": [
+      "douleur localisée au territoire sensitif d'un nerf crânien (V, VII bis, IX, grand nerf occipital)",
+      "douleur type décharge électrique (névralgie)",
+      "douleur type brûlure (douleur neuropathique)"
+    ],
+    "indications_positives": ["suspicion neuropathie crânienne douloureuse"],
+    "indications_negatives": [],
+    "ionisant": false,
+    "requires_contrast": true,
+    "priorite": "1ère intention",
+    "dose": "0",
+    "reference_section": "8. Neuropathies crâniennes douloureuses",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["IRM grand nerf occipital"]
+  },
+  {
+    "id": "neuro_cephalee_nevralgie_trijumeau_v2",
+    "systeme": "neuro",
+    "pathologie": "Névralgie du Trijumeau (NT)",
+    "modalite": "IRM cérébrale (avec coupes fines + injection)",
+    "resume": "Douleur faciale très brève (quelques secondes), unilatérale, à type de décharge électrique (zone gâchette). L'IRM est systématique pour rechercher une cause secondaire (conflit vasculo-nerveux, tumeur, SEP, zona).",
+    "urgence_enum": "standard",
+    "populations": [
+      "adulte"
+    ],
+    "symptomes": [
+      "douleur faciale unilatérale (V2/V3 >> V1)",
+      "décharge électrique/élancement",
+      "quelques secondes à 2 minutes",
+      "déclenché par zone gâchette (parole, mastication)"
+    ],
+    "indications_positives": [
+      "suspicion NT"
+    ],
+    "indications_negatives": [
+      "l'imagerie doit être réalisée avec des coupes fines sur le trajet du nerf"
+    ],
+    "ionisant": false,
+    "requires_contrast": true,
+    "priorite": "Systématique (bilan étiologique)",
+    "informations_utiles": null,
+    "reference_section": "CEN Chapitre 10 - Item 99",
+    "source": "College docs",
+    "year": 2025,
+    "link": "",
+    "synonymes": ["IRM trijumeau"]
+}
+]
